@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-const literalHTML = ({name, location, github, linkedIn, stack}) =>
+const literalHTML = ({ name, location, github, bio, linkedIn, stack }) =>
     `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +15,14 @@ const literalHTML = ({name, location, github, linkedIn, stack}) =>
         <h1 class="title">My name is ${name}</h1>
         <p class="subtitle">I'm from ${location}.</p>
     </div>
+    </div>
+    <div class="hero is-success">
+        <div class="hero-body">
+            <h3 class="title">Bio</h3>
+            <p class="subtitle">
+            ${bio}
+            </p>
+        </div>
     </div>
     <div class="hero is-warning">
         <div class="hero-body">
@@ -65,7 +73,7 @@ inquirer
             type: "checkbox",
             name: "stack",
             message: "What languages do you know?",
-            choices: ["HMTL", "CSS", "Javascript", "Node.js" , "cat"],
+            choices: ["HMTL", "CSS", "Javascript", "Node.js", "cat"],
         },
     ])
     .then((data) => {
