@@ -12,7 +12,7 @@ const literalHTML = ({name, location, github, linkedIn, stack}) =>
 <body>
   <div class="hero is-primary">
     <div class="hero-body">
-        <h1 class="Title">My name is ${name}</h1>
+        <h1 class="title">My name is ${name}</h1>
         <p class="subtitle">I'm from ${location}.</p>
     </div>
     </div>
